@@ -1,0 +1,28 @@
+galaxy_info:
+  role_name: 'install_ansible_dependencies_for_SELINUX'
+  author: 'Johannes Kastl'
+  description: 'Install packages required by Ansible to work with SELINUX'
+  company: 'B1 Systems GmbH'
+
+  license: 'BSD-3-Clause'
+
+  min_ansible_version: 2.4
+
+  platforms:
+  - name: EL
+    versions:
+    - 7
+    - 8
+  - name: opensuse
+    versions:
+    - 15
+  - name: Rocky
+    versions:
+    - 8
+  - name: SLES
+    versions:
+    - 15
+
+  galaxy_tags: []
+
+dependencies: []
