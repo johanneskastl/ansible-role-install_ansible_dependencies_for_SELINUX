@@ -1,0 +1,24 @@
+---
+# install_ansible_dependencies_for_SELINUX/tasks/main.yml
+
+- name: 'Install required packages on RHEL/CentOS 7'
+  yum:
+    name:
+      - 'libselinux-python'
+      - 'setroubleshoot-server'
+      - 'selinux-policy'
+    state: 'present'
+  when:
+    - 'ansible_distribution == "CentOS" or ansible_distribution == "RedHat"'
+    - 'ansible_distribution_major_version == "7"'
+
+- name: 'Install required packages on RHEL/CentOS/AlmaLinux/RockyLinux 8'
+  yum:
+    name:
+      - 'python3-libselinux'
+      - 'setroubleshoot-server'
+      - 'selinux-policy'
+    state: 'present'
+  when:
+    - 'ansible_os_family == "RedHat" or ansible_os_family == "Rocky"'
+    - 'ansible_distribution_major_version == "8"'
