@@ -1,5 +1,6 @@
 galaxy_info:
   role_name: 'install_ansible_dependencies_for_SELINUX'
+  namespace: 'johanneskastl'
   author: 'Johannes Kastl'
   description: 'Install packages required by Ansible to work with SELINUX'
   company: 'B1 Systems GmbH'
