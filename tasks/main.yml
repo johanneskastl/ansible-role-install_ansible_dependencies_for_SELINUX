@@ -22,3 +22,19 @@
   when:
     - 'ansible_os_family == "RedHat" or ansible_os_family == "Rocky"'
     - 'ansible_distribution_major_version == "8"'
+
+- name: 'Install required packages on openSUSE MicroOS'
+  ansible.builtin.package:
+    name:
+      - 'python3-selinux'
+      - 'python3-semanage'
+      - 'libselinux1'
+      - 'selinux-tools'
+      - 'selinux-policy'
+      - 'patterns-microos-selinux'
+    state: 'present'
+  notify:
+    - 'Reboot'
+    - 'Wait for the machine(s) to be ready again'
+  when:
+    - 'ansible_os_family == "openSUSE MicroOS"'
