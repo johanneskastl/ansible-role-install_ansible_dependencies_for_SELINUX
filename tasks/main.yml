@@ -2,7 +2,7 @@
 # install_ansible_dependencies_for_SELINUX/tasks/main.yml
 
 - name: 'Install required packages on RHEL/CentOS 7'
-  yum:
+  ansible.builtin.package:
     name:
       - 'libselinux-python'
       - 'setroubleshoot-server'
@@ -13,7 +13,7 @@
     - 'ansible_distribution_major_version == "7"'
 
 - name: 'Install required packages on RHEL/CentOS/AlmaLinux/RockyLinux 8'
-  yum:
+  ansible.builtin.package:
     name:
       - 'python3-libselinux'
       - 'setroubleshoot-server'
