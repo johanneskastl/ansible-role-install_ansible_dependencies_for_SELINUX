@@ -40,7 +40,7 @@
       '
     - 'ansible_distribution_major_version | int == 9'
 
-- name: 'Install required packages on openSUSE MicroOS'
+- name: 'Install required packages on openSUSE MicroOS / openSUSE Leap Micro'
   ansible.builtin.package:
     name:
       - 'python3-selinux'
@@ -54,4 +54,7 @@
     - 'Reboot'
     - 'Wait for the machine(s) to be ready again'
   when:
-    - 'ansible_os_family == "openSUSE MicroOS"'
+    - '
+      ansible_os_family == "openSUSE MicroOS"
+      or ansible_os_family == "openSUSE Leap Micro"
+      '
