@@ -9,10 +9,7 @@
       - 'selinux-policy'
     state: 'present'
   when:
-    - '
-      ansible_distribution == "CentOS"
-      or ansible_distribution == "RedHat"
-      '
+    - 'ansible_os_family == "RedHat"'
     - 'ansible_distribution_major_version | int == 7'
 
 - name: 'Install required packages on RHEL/CentOS/AlmaLinux/RockyLinux 8'
