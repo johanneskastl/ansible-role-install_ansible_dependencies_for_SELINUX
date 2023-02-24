@@ -1,3 +1,5 @@
+![Ansible Lint](https://github.com/johanneskastl/ansible-role-install_ansible_dependencies_for_SELINUX/workflows/Ansible%20Lint/badge.svg)
+
 install_ansible_dependencies_for_SELINUX
 =========
 
