@@ -25,7 +25,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-        - { role: 'johanneskastl.install_ansible_dependencies_for_SELINUX' }
+        - role: 'johanneskastl.install_ansible_dependencies_for_SELINUX'
 
 License
 -------
