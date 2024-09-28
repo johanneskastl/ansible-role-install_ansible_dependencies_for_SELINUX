@@ -40,6 +40,20 @@
       '
     - 'ansible_distribution_major_version | int == 9'
 
+- name: 'Install required packages on RHEL/Fedora CoreOS'
+  community.general.rpm_ostree_pkg:
+    name:
+      - 'python3-libselinux'
+      - 'setroubleshoot-server'
+      - 'selinux-policy'
+    state: 'present'
+  notify:
+    - 'Reboot'
+    - 'Wait for the machine(s) to be ready again'
+  when:
+    - 'ansible_os_family == "RedHat"'
+    - 'ansible_pkg_mgr == "atomic_container"'
+
 - name: 'Install required packages on openSUSE MicroOS / openSUSE Leap Micro'
   ansible.builtin.package:
     name:
