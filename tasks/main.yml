@@ -54,6 +54,27 @@
     - 'ansible_os_family == "RedHat"'
     - 'ansible_pkg_mgr == "atomic_container"'
 
+- name: 'Install required packages on openSUSE Tumbleweed / Slowroll'
+  ansible.builtin.package:
+    name:
+      - 'python3-selinux'
+      - 'python3-semanage'
+      - 'libselinux1'
+      - 'selinux-tools'
+      - 'selinux-policy'
+      - 'patterns-microos-selinux'
+    state: 'present'
+  when:
+    - '
+      ansible_os_family == "Suse"
+      or
+      ansible_os_family == "openSUSE Tumbleweed"
+      or
+      ansible_os_family == "openSUSE Tumbleweed-Slowroll"
+      '
+    - ansible_os_family != "openSUSE MicroOS"
+    - ansible_os_family != "openSUSE Leap Micro"
+
 - name: 'Install required packages on openSUSE MicroOS / openSUSE Leap Micro'
   ansible.builtin.package:
     name:
