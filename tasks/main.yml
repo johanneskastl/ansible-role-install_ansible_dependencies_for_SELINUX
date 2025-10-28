@@ -74,6 +74,7 @@
       '
     - ansible_os_family != "openSUSE MicroOS"
     - ansible_os_family != "openSUSE Leap Micro"
+    - ansible_distribution != "openSUSE Leap Micro"
 
 - name: 'Install required packages on openSUSE MicroOS / openSUSE Leap Micro'
   ansible.builtin.package:
@@ -91,5 +92,6 @@
   when:
     - '
       ansible_os_family == "openSUSE MicroOS"
+      ansible_distribution == "openSUSE MicroOS"
       or ansible_os_family == "openSUSE Leap Micro"
       '
