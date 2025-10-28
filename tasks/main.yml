@@ -92,6 +92,6 @@
   when:
     - '
       ansible_os_family == "openSUSE MicroOS"
-      ansible_distribution == "openSUSE MicroOS"
+      or ansible_distribution == "openSUSE MicroOS"
       or ansible_os_family == "openSUSE Leap Micro"
       '
