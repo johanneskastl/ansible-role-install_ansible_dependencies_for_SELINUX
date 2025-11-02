@@ -73,6 +73,7 @@
       ansible_os_family == "openSUSE Tumbleweed-Slowroll"
       '
     - ansible_os_family != "openSUSE MicroOS"
+    - ansible_distribution != "openSUSE MicroOS"
     - ansible_os_family != "openSUSE Leap Micro"
     - ansible_distribution != "openSUSE Leap Micro"
 
